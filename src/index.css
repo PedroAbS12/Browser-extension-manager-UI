@@ -1,3 +1,6 @@
+@import "tailwindcss";
+
+
 :root {
   font-family: system-ui, Avenir, Helvetica, Arial, sans-serif;
   line-height: 1.5;
@@ -24,10 +27,10 @@ a:hover {
 
 body {
   margin: 0;
-  display: flex;
-  place-items: center;
   min-width: 320px;
   min-height: 100vh;
+  width: 100%;
+  display: block; /* o eliminar display flex */
 }
 
 h1 {
@@ -35,23 +38,68 @@ h1 {
   line-height: 1.1;
 }
 
+h2 {
+  font-size: 2.2em;
+  line-height: 1.1;
+}
+
 button {
   border-radius: 8px;
+  border: 1px solid transparent;
+  padding: 0.6em 0.6em;
+  font-size: 1em;
+  font-weight: 500;
+  font-family: inherit;
+  background-color: #1a1a1aab;
+  cursor: pointer;
+  transition: border-color 0.25s;
+}
+button:hover {
+  border-color: #f65a51;
+}
+button:focus,
+button:focus-visible {
+  outline: 4px auto -webkit-focus-ring-color;
+}
+
+.button-primary {
+  border-radius: 15px;
+  border: 0.2px solid;
+  border-color: #ffffff7e;
+  padding: 0.3em 0.6em;
+  font-size: 14px;
+  font-weight: 500;
+  font-family: inherit;
+  background-color: transparent;
+  cursor: pointer;
+  transition: border-color 0.25s;
+}
+.button-primary:hover {
+  border-color: #ffffff;
+}
+.button-primary:focus,
+.button-primary:focus-visible {
+  outline: 4px auto -webkit-focus-ring-color;
+}
+
+.button-secundary {
+  border-radius: 25px;
   border: 1px solid transparent;
   padding: 0.6em 1.2em;
   font-size: 1em;
   font-weight: 500;
   font-family: inherit;
-  background-color: #1a1a1a;
+  background-color: #2f354b;
   cursor: pointer;
   transition: border-color 0.25s;
 }
-button:hover {
-  border-color: #646cff;
+.button-secundary:hover {
+  border-color: #f65a51;
 }
-button:focus,
-button:focus-visible {
+.button-secundary:focus,
+.button-secundary:focus-visible {
   outline: 4px auto -webkit-focus-ring-color;
+  background-color: #f65a51;
 }
 
 @media (prefers-color-scheme: light) {
