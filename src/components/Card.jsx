@@ -2,9 +2,7 @@ import Toggle from "./Toggle";
 
 export default function Card({ logo, name, description, isActive, onToggle }) {
   return (
-    <article
-      className="rounded-2xl shadow p-4 flex flex-col justify-between h-full w-full bg-[#1f2535]"
-    >
+    <article className="rounded-2xl shadow p-4 flex flex-col justify-between h-full w-full bg-[#1f2535]">
       <div className="flex items-start gap-4">
         <img
           src={`${import.meta.env.BASE_URL}${logo}`}
@@ -13,7 +11,9 @@ export default function Card({ logo, name, description, isActive, onToggle }) {
         />
         <div className="flex flex-col overflow-hidden">
           <h3 className="font-bold text-lg text-white truncate">{name}</h3>
-          <p className="text-sm text-gray-300 break-words overflow-hidden">{description}</p>
+          <p className="text-sm text-gray-300 break-words overflow-hidden">
+            {description}
+          </p>
         </div>
       </div>
 
