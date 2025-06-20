@@ -7,7 +7,7 @@ export default function Card({ logo, name, description, isActive, onToggle }) {
     >
       <div className="flex items-start gap-4">
         <img
-          src={logo}
+          src={`${import.meta.env.BASE_URL}${logo}`}
           alt={`${name} logo`}
           className="w-16 h-16 object-contain rounded max-w-full flex-shrink-0"
         />
