@@ -5,11 +5,13 @@ import Filters from "../components/Filters";
 import Card from "../components/Card";
 import rawData from "../data/data.json";
 import { useState } from "react";
+import { filterByStatus } from "../utils/filters"; // importa la función que definimos antes
 
 export default function Home() {
   const [data, setData] = useState(rawData);
+  const [filter, setFilter] = useState("all"); // nuevo estado filtro
 
-  // Mejorar el toggle sin mutar estado directamente
+  // toggle sin mutar estado directo
   const handleToggle = (index) => {
     setData((prevData) =>
       prevData.map((item, i) =>
@@ -18,13 +20,16 @@ export default function Home() {
     );
   };
 
+  // data filtrada con el filtro seleccionado
+  const filteredData = filterByStatus(data, filter);
+
   return (
     <MainLayout>
       <div className="space-y-6">
         <SearchBox />
         <div className="flex flex-col sm:flex-row justify-between items-center gap-4">
           <Header header="Extensions List" />
-          <Filters />
+          <Filters currentFilter={filter} onChangeFilter={setFilter} />
         </div>
 
         <section
@@ -32,7 +37,7 @@ export default function Home() {
                      grid-cols-[repeat(auto-fit,_minmax(280px,_1fr))]
                      max-w-full"
         >
-          {data.map((item, i) => (
+          {filteredData.map((item, i) => (
             <Card
               key={item.name}
               logo={item.logo}

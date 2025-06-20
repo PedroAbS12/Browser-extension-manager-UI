@@ -1,14 +1,19 @@
-export default function Filters() {
+export default function Filters({ currentFilter, onChangeFilter }) {
   return (
     <div className="flex flex-wrap gap-2">
-      {['All', 'Active', 'Inactive'].map(label => (
-        <button
-          key={label}
-          className="button-secundary px-3 py-1 bg-white-200 rounded-full hover:bg-white-300"
-        >
-          {label}
-        </button>
-      ))}
+      {['All', 'Active', 'Inactive'].map(label => {
+        const isActive = currentFilter === label.toLowerCase();
+        return (
+          <button
+            key={label}
+            onClick={() => onChangeFilter(label.toLowerCase())}
+            className={`button-secundary px-3 py-1 rounded-full hover:border-red-500
+              ${isActive ? 'active-filter' : ''}`}
+          >
+            {label}
+          </button>
+        );
+      })}
     </div>
   );
 }

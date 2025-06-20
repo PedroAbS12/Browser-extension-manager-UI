@@ -93,14 +93,14 @@ button:focus-visible {
   cursor: pointer;
   transition: border-color 0.25s;
 }
-.button-secundary:hover {
+
+
+.active-filter {
+  background-color: #f65a51; /* el color rojo que usas en hover/focus */
   border-color: #f65a51;
+  color: white;
 }
-.button-secundary:focus,
-.button-secundary:focus-visible {
-  outline: 4px auto -webkit-focus-ring-color;
-  background-color: #f65a51;
-}
+
 
 @media (prefers-color-scheme: light) {
   :root {
