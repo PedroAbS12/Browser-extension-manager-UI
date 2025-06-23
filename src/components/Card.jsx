@@ -1,6 +1,6 @@
 import Toggle from "./Toggle";
 
-export default function Card({ logo, name, description, isActive, onToggle }) {
+export default function Card({ logo, name, description, isActive, onToggle, onRemove }) {
   return (
     <article className="rounded-2xl shadow p-4 flex flex-col justify-between h-full w-full bg-[#1f2535]">
       <div className="flex items-start gap-4">
@@ -18,7 +18,7 @@ export default function Card({ logo, name, description, isActive, onToggle }) {
       </div>
 
       <div className="flex justify-between items-center mt-4">
-        <button className="button-primary text-sm text-white rounded-full border border-white px-4 py-1 hover:bg-white hover:text-[#1f2535] transition whitespace-nowrap">
+        <button onClick={onRemove} className="button-primary transition whitespace-nowrap">
           Remove
         </button>
         <Toggle checked={isActive} onChange={onToggle} />

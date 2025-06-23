@@ -12,12 +12,15 @@ export default function Home() {
   const [filter, setFilter] = useState("all"); // nuevo estado filtro
 
   // toggle sin mutar estado directo
-  const handleToggle = (index) => {
+  const handleToggle = (name) => {
     setData((prevData) =>
-      prevData.map((item, i) =>
-        i === index ? { ...item, isActive: !item.isActive } : item
+      prevData.map((item) =>
+        item.name === name ? { ...item, isActive: !item.isActive } : item
       )
     );
+  };
+  const handleRemove = (name) => {
+    setData((prevData) => prevData.filter((item) => item.name !== name));
   };
 
   // data filtrada con el filtro seleccionado
@@ -37,14 +40,15 @@ export default function Home() {
                      grid-cols-[repeat(auto-fit,_minmax(280px,_1fr))]
                      max-w-full"
         >
-          {filteredData.map((item, i) => (
+          {filteredData.map((item) => (
             <Card
               key={item.name}
               logo={item.logo}
               name={item.name}
               description={item.description}
               isActive={item.isActive}
-              onToggle={() => handleToggle(i)}
+              onToggle={() => handleToggle(item.name)}
+              onRemove={() => handleRemove(item.name)} // ← nueva prop
             />
           ))}
         </section>
