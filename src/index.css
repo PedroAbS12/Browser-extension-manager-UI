@@ -67,7 +67,7 @@ button:focus-visible {
 .button-primary {
   border-radius: 15px;
   border: 0.2px solid;
-  border-color: #ffffff7e;
+  border-color: #07133f;
   padding: 0.3em 0.6em;
   font-size: 14px;
   font-weight: 500;
@@ -75,14 +75,19 @@ button:focus-visible {
   background-color: transparent;
   cursor: pointer;
   transition: border-color 0.25s;
+  color: #07133f; /* texto modo oscuro */
 }
-.button-primary:hover {
-  border-color: #ffffff;
-}
+
 .button-primary:focus,
 .button-primary:focus-visible {
   outline: 4px auto -webkit-focus-ring-color;
 }
+
+.dark .button-primary {
+  color: white; /* texto modo oscuro */
+  border-color: #ffffff7e;
+}
+
 
 .button-secundary {
   border-radius: 25px;
