@@ -1,5 +1,5 @@
 @import "tailwindcss";
-
+@custom-variant dark (&:where(.dark, .dark *));
 
 :root {
   font-family: system-ui, Avenir, Helvetica, Arial, sans-serif;
@@ -41,6 +41,11 @@ h1 {
 h2 {
   font-size: 2.2em;
   line-height: 1.1;
+  color :#07133f
+}
+
+.dark h2 {
+  color: white;
 }
 
 button {
@@ -50,13 +55,10 @@ button {
   font-size: 1em;
   font-weight: 500;
   font-family: inherit;
-  background-color: #1a1a1aab;
   cursor: pointer;
   transition: border-color 0.25s;
 }
-button:hover {
-  border-color: #f65a51;
-}
+
 button:focus,
 button:focus-visible {
   outline: 4px auto -webkit-focus-ring-color;
@@ -84,23 +86,26 @@ button:focus-visible {
 
 .button-secundary {
   border-radius: 25px;
-  border: 1px solid transparent;
   padding: 0.6em 1.2em;
   font-size: 1em;
   font-weight: 500;
   font-family: inherit;
-  background-color: #2f354b;
+  background-color: #fbfcfd; /* fondo claro */
+  color: #07133f; /* texto modo claro */
   cursor: pointer;
-  transition: border-color 0.25s;
+  transition: border-color 0.25s, background-color 0.25s, color 0.25s;
 }
 
-
-.active-filter {
-  background-color: #f65a51; /* el color rojo que usas en hover/focus */
-  border-color: #f65a51;
-  color: white;
+.dark .button-secundary {
+  background-color: #2f354b; /* fondo modo oscuro */
+  color: white; /* texto modo oscuro */
 }
 
+.button-secundary.active-filter,
+.dark .button-secundary.active-filter {
+  background-color: #f65a51 !important;
+  color: white !important;
+}
 
 @media (prefers-color-scheme: light) {
   :root {

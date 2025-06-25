@@ -1,10 +1,15 @@
-import { defineConfig } from 'vite'
-import react from '@vitejs/plugin-react'
-import tailwindcss from '@tailwindcss/vite'
+import { defineConfig } from "vite";
+import react from "@vitejs/plugin-react";
+import tailwindcss from "@tailwindcss/vite";
 
-// https://vite.dev/config/
+// https://vitejs.dev/config/
 export default defineConfig({
-  darkMode: 'class',
   base: "Browser-extension-manager-UI",
-  plugins: [tailwindcss(),react()],
-})
+  plugins: [
+    tailwindcss({
+      darkMode: "class",
+      content: ["./index.html", "./src/**/*.{js,ts,jsx,tsx}"],
+    }),
+    react(),
+  ],
+});

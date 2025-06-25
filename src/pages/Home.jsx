@@ -1,5 +1,5 @@
 import MainLayout from "../layouts/MainLayout";
-import SearchBox from "../components/Searchbox";
+import SearchBox from "../components/SearchBox";
 import Header from "../components/Header";
 import Filters from "../components/Filters";
 import Card from "../components/Card";
