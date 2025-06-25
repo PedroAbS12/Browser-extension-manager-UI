@@ -1,18 +1,33 @@
-<<<<<<< HEAD
-# React + Vite
+# Browser Extension Manager UI
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+Una interfaz web sencilla construida con **React**, **Vite** y **Tailwind CSS v4**, diseñada para visualizar y filtrar extensiones del navegador en un formato de tarjetas (cards). Incluye soporte para **modo oscuro** y está desplegada vía **GitHub Pages**.
 
-Currently, two official plugins are available:
+👉 [Ver demo en vivo](https://pedroabs12.github.io/Browser-extension-manager-UI/)
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react) uses [Babel](https://babeljs.io/) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
+---
 
-## Expanding the ESLint configuration
+## 🧰 Tecnologías utilizadas
 
-If you are developing a production application, we recommend using TypeScript with type-aware lint rules enabled. Check out the [TS template](https://github.com/vitejs/vite/tree/main/packages/create-vite/template-react-ts) for information on how to integrate TypeScript and [`typescript-eslint`](https://typescript-eslint.io) in your project.
-=======
-# Browser-extension-manager-UI
+- ⚛️ **React** — Librería de UI basada en componentes.
+- ⚡ **Vite** — Herramienta de desarrollo ultrarrápida.
+- 🎨 **Tailwind CSS v4** — Framework utility-first para estilos.
+- 🌙 **Dark Mode** — Implementado con clases condicionales y configuración en Tailwind.
+- 🔍 **Filtros** — Para explorar extensiones por categoría, nombre u otro criterio.
+- 🧱 **Grid List** — Visualización en tarjetas adaptativas con diseño responsivo.
 
-https://pedroabs12.github.io/Browser-extension-manager-UI/
->>>>>>> 2e137f9bde6631e23fb94fa913dfc02b3e012de3
+---
+
+## 🚀 Instalación local
+
+```bash
+# Clonar el repositorio
+git clone https://github.com/pedroabs12/Browser-extension-manager-UI.git
+
+# Acceder a la carpeta
+cd Browser-extension-manager-UI
+
+# Instalar dependencias
+npm install
+
+# Ejecutar entorno de desarrollo
+npm run dev
